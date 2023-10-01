@@ -1,0 +1,108 @@
+.setting-action-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+
+    .setting-filter-container {
+      display: flex;
+      flex-direction: column;
+
+      .search-label {
+        font-weight: 400;
+        font-size: 12px;
+        color: #999999;
+      }
+
+      .search-label-customer {
+        font-weight: 400;
+        font-size: 16px;
+        color:#0d4b7e;
+      }
+
+      .search-text-container {
+        padding: 5.5px 8.5px;
+        width: 356px;
+        height: 35px;
+        border: 1px solid #E6E6E6;
+        border-radius: 5px;
+        display: flex;
+
+        input {
+          border: none;
+          font-weight: 400;
+          font-size: 14px;
+          flex-grow: 1;
+        }
+
+        input:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .setting-button-container {
+      // padding-top: 13px;
+
+      .setting-button-eula {
+        width: 112px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #F64747;
+        border-radius: 5px;
+        color: #F64747;
+        background: #FFFFFF;
+        cursor: pointer;
+      }
+
+      .setting-button-organisation {
+        width: 137px;
+        height: 36px;
+        background: #0D4B7E;
+        border: 1px solid #0D4B7E;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        cursor: pointer;
+      }
+      .setting-button-cancel {
+        background: #FFFFFF;
+        border: 1px solid #0D4B7E;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 12px;
+        color: #0D4B7E;
+        padding: 10.5px 16px;
+      }
+    }
+
+  }
+  .setting-action-button {
+    background: #FFFFFF;
+    border: none;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-left: 0px;
+  }
+  .table-container {
+    overflow: auto;
+  }
+  tr.mat-header-row {
+    background: #76d7ff;
+    border-radius: 20px 20px 0px 0px;
+    height: 36px !important;
+  }
+  .sh-header {
+    padding-left: 10px !important;
+    border-right: solid 1px #53C5FF !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+  }

@@ -1,0 +1,177 @@
+<div class="dialog-header">
+    <h2 style="margin: unset;">Organization</h2>
+    <button mat-mini-fab class="close-dialog-btn" (click)="closeDialog()">
+        <i style="font-size:20px; color: #4F4F4F;" class="material-icons">close</i>
+    </button>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+    <!-- <div mat-dialog-content> -->
+    <span class="text-input-container">
+        <label>Organization ID*</label>
+        <input matInput type="text" placeholder="Enter org id here" [(ngModel)]="data.orgId" required />
+    </span>
+    <span class="text-input-container">
+        <label>Organization Name*</label>
+        <input matInput type="text" placeholder="Enter org name here" [(ngModel)]="data.organisationName" required />
+    </span>
+    <span class="text-input-container">
+        <label>Phone</label>
+        <input matInput type="text" placeholder="Enter phone here" [(ngModel)]="data.telephone" />
+    </span>
+    <span class="text-input-container">
+        <label>Email</label>
+        <input matInput type="email" placeholder="Enter email here" [(ngModel)]="data.email" />
+    </span>
+    <span class="text-input-container">
+        <label>Valid From</label>
+        <input matInput type="date" [(ngModel)]="data.validFrom">
+    </span>
+    <span class="text-input-container">
+        <label>Valid to</label>
+        <input matInput type="date" [(ngModel)]="data.validTo">
+    </span>
+    <div class="config-card" style="width: 795px;" *ngIf="data && data.highestConfidance">
+        <div class="config-card-header">Confidence Score Highlight
+            <div class="add-form-button" (click)="resetToInitialColorConfig()">
+                <mat-icon>refresh</mat-icon>
+                <span style="text-decoration: underline;">Reset to Default</span>
+            </div>
+        </div>
+        <div class="config-card-body" style="height: 393px;">
+            <div style="height: 86px;">
+                <div class="confidance-color-container">
+                    <div style="display: flex; gap:10px;">
+                        <label class="config-label" style="font-weight: 500;"> Highest Confidence</label>
+                        <button class="color-container" style="background: #80c900;"
+                            (click)="changeColor(data.highestConfidance, '#80c900')"
+                            [ngClass]="{'color-container-active' : data.highestConfidance.color === '#80c900'}"></button>
+                        <button class="color-container" style="background: #b0db6e;"
+                            (click)="changeColor(data.highestConfidance, '#b0db6e')"
+                            [ngClass]="{'color-container-active' : data.highestConfidance.color === '#b0db6e'}"></button>
+                        <button class="color-container" style="background: #c5e493;"
+                            (click)="changeColor(data.highestConfidance, '#c5e493')"
+                            [ngClass]="{'color-container-active' : data.highestConfidance.color === '#c5e493'}"></button>
+                        <button class="color-container" style="background: #edf6db;"
+                            (click)="changeColor(data.highestConfidance, '#edf6db')"
+                            [ngClass]="{'color-container-active' : data.highestConfidance.color === '#edf6db'}"></button>
+                    </div>
+                    <div style="display: flex; gap:10px;">
+                        <span class="color-slide-container">
+                            <label class="config-label" style="font-weight: 500;">0</label>
+                            <ngx-slider [(value)]="data.highestConfidance.min"
+                                [(highValue)]="data.highestConfidance.value" [manualRefresh]="manualRefresh"
+                                [options]="options" (valueChange)="valueChange($event, 'highestConfidance')"
+                                class="highestcolor">
+                            </ngx-slider>
+                            <label class="config-label" style="font-weight: 500;">100</label>
+                        </span>
+                        <span class="config-text-input" style="width: 78px;">{{data.highestConfidance.min}}</span>
+                        <span class="config-text-input" style="width: 78px;">{{data.highestConfidance.value}}</span>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 86px;">
+                <div class="confidance-color-container">
+                    <div style="display:flex;gap:10px;">
+                        <label class="config-label" style="font-weight: 500;"> High Confidence</label>
+                        <button class="color-container" style="background: #d6c800;"
+                            (click)="changeColor(data.highConfidance, '#d6c800')"
+                            [ngClass]="{'color-container-active' : data.highConfidance.color === '#d6c800'}"></button>
+                        <button class="color-container" style="background: #F7CA78;"
+                            (click)="changeColor(data.highConfidance, '#F7CA78')"
+                            [ngClass]="{'color-container-active' : data.highConfidance.color === '#F7CA78'}"></button>
+                        <button class="color-container" style="background: #FBE1B2;"
+                            (click)="changeColor(data.highConfidance, '#FBE1B2')"
+                            [ngClass]="{'color-container-active' : data.highConfidance.color === '#FBE1B2'}"></button>
+                        <button class="color-container" style="background: #FDF0D8;"
+                            (click)="changeColor(data.highConfidance, '#FDF0D8')"
+                            [ngClass]="{'color-container-active' : data.highConfidance.color === '#FDF0D8'}"></button>
+                    </div>
+                    <div style="display: flex; gap:10px;">
+                        <span class="color-slide-container">
+                            <label class="config-label" style="font-weight: 500;">0</label>
+                            <ngx-slider [(value)]="data.highConfidance.min" [(highValue)]="data.highConfidance.value"
+                                [options]="options" (highValueChange)="highValueChange($event, 'highConfidance')" [manualRefresh]="manualRefresh"
+                                (valueChange)="valueChange($event, 'highConfidance')" class="highcolor">
+                            </ngx-slider>
+                            <label class="config-label" style="font-weight: 500;">100</label>
+                        </span>
+                        <span class="config-text-input" style="width: 78px;">{{data.highConfidance.min}}</span>
+                        <span class="config-text-input" style="width: 78px;">{{data.highConfidance.value}}</span>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 86px;">
+                <div class="confidance-color-container">
+                    <div style="display:flex;gap:10px;">
+                        <label class="config-label" style="font-weight: 500;"> Mid Confidence</label>
+                        <button class="color-container" style="background: #808080;"
+                            (click)="changeColor(data.midConfidance, '#808080')"
+                            [ngClass]="{'color-container-active' : data.midConfidance.color === '#808080'}"></button>
+                        <button class="color-container" style="background: #A4A4A4;"
+                            (click)="changeColor(data.midConfidance, '#A4A4A4')"
+                            [ngClass]="{'color-container-active' : data.midConfidance.color === '#A4A4A4'}"></button>
+                        <button class="color-container" style="background: #C8C8C8;"
+                            (click)="changeColor(data.midConfidance, '#C8C8C8')"
+                            [ngClass]="{'color-container-active' : data.midConfidance.color === '#C8C8C8'}"></button>
+                        <button class="color-container" style="background: #DADADA;"
+                            (click)="changeColor(data.midConfidance, '#DADADA')"
+                            [ngClass]="{'color-container-active' : data.midConfidance.color === '#DADADA'}"></button>
+                    </div>
+                    <div style="display: flex; gap:10px;">
+                        <span class="color-slide-container">
+                            <label class="config-label" style="font-weight: 500;">0</label>
+                            <ngx-slider [(value)]="data.midConfidance.min" [(highValue)]="data.midConfidance.value" [manualRefresh]="manualRefresh"
+                                [options]="options" (highValueChange)="highValueChange($event, 'midConfidance')"
+                                (valueChange)="valueChange($event, 'midConfidance')" class="midcolor">
+                            </ngx-slider>
+                            <label class="config-label" style="font-weight: 500;">100</label>
+                        </span>
+                        <span class="config-text-input" style="width: 78px;">{{data.midConfidance.min}}</span>
+                        <span class="config-text-input" style="width: 78px;">{{data.midConfidance.value}}</span>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 86px;">
+                <div class="confidance-color-container">
+                    <div style="display:flex;gap:10px;">
+                        <label class="config-label" style="font-weight: 500;"> Low Confidence</label>
+                        <button class="color-container" style="background: #d30000;"
+                            (click)="changeColor(data.lowConfidance, '#d30000')"
+                            [ngClass]="{'color-container-active' : data.lowConfidance.color === '#d30000'}"></button>
+                        <button class="color-container" style="background: #F181A8;"
+                            (click)="changeColor(data.lowConfidance, '#F181A8')"
+                            [ngClass]="{'color-container-active' : data.lowConfidance.color === '#F181A8'}"></button>
+                        <button class="color-container" style="background: #F7B7CD;"
+                            (click)="changeColor(data.lowConfidance, '#F7B7CD')"
+                            [ngClass]="{'color-container-active' : data.lowConfidance.color === '#F7B7CD'}"></button>
+                        <button class="color-container" style="background: #FBDBE6;"
+                            (click)="changeColor(data.lowConfidance, '#FBDBE6')"
+                            [ngClass]="{'color-container-active' : data.lowConfidance.color === '#FBDBE6'}"></button>
+                    </div>
+                    <div style="display: flex; gap:10px;">
+                        <span class="color-slide-container">
+                            <label class="config-label" style="font-weight: 500;">0</label>
+                            <ngx-slider [(value)]="data.lowConfidance.min" [(highValue)]="data.lowConfidance.value" [manualRefresh]="manualRefresh"
+                                [options]="options" (highValueChange)="highValueChange($event, 'lowConfidance')"
+                                class="lowcolor">
+                            </ngx-slider>
+                            <label class="config-label" style="font-weight: 500;">100</label>
+                        </span>
+                        <span class="config-text-input" style="width: 78px;">{{data.lowConfidance.min}}</span>
+                        <span class="config-text-input" style="width: 78px;">{{data.lowConfidance.value}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="stepper-action-buttons">
+
+    <button mat-raised-button type="button" class="setting-button-cancel" (click)="closeDialog()">
+        Cancel
+    </button>
+    <button mat-raised-button class="setting-button-organisation" [disabled]="!data.orgId || !data.organisationName"
+        (click)="saveOrg()">Save</button>
+
+</div>

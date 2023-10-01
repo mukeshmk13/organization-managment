@@ -1,0 +1,146 @@
+[
+    {
+        "orgId": 3792,
+        "organisationName": "MR limited",
+        "telephone": "123456",
+        "email": "mukesh.rathore1390@gmail.com",
+        "validFrom": "2022-12-03",
+        "validTo": "2023-01-26",
+        "lowConfidance": {
+            "id": 0,
+            "min": 0,
+            "max": 100,
+            "value": 25,
+            "color": "#d30000"
+        },
+        "midConfidance": {
+            "id": 1,
+            "min": 26,
+            "max": 100,
+            "value": 49,
+            "color": "#808080"
+        },
+        "highConfidance": {
+            "id": 2,
+            "min": 50,
+            "max": 100,
+            "value": 89,
+            "color": "#d6c800"
+        },
+        "highestConfidance": {
+            "id": 3,
+            "min": 90,
+            "max": 100,
+            "value": 100,
+            "color": "#80c900"
+        }
+    },
+    {
+        "orgId": 3793,
+        "organisationName": "Google limited",
+        "telephone": "654321",
+        "email": "google@gmail.com",
+        "validFrom": "2022-12-10",
+        "validTo": "2023-01-27",
+        "lowConfidance": {
+            "id": 0,
+            "min": 0,
+            "max": 100,
+            "value": 25,
+            "color": "#d30000"
+        },
+        "midConfidance": {
+            "id": 1,
+            "min": 26,
+            "max": 100,
+            "value": 49,
+            "color": "#808080"
+        },
+        "highConfidance": {
+            "id": 2,
+            "min": 50,
+            "max": 100,
+            "value": 89,
+            "color": "#d6c800"
+        },
+        "highestConfidance": {
+            "id": 3,
+            "min": 90,
+            "max": 100,
+            "value": 100,
+            "color": "#80c900"
+        }
+    },
+    {
+        "orgId": 3794,
+        "organisationName": "Facebook",
+        "telephone": "987654",
+        "email": "facebook@gmail.com",
+        "validFrom": "2022-12-03",
+        "validTo": "2023-01-26",
+        "lowConfidance": {
+            "id": 0,
+            "min": 0,
+            "max": 100,
+            "value": 25,
+            "color": "#d30000"
+        },
+        "midConfidance": {
+            "id": 1,
+            "min": 26,
+            "max": 100,
+            "value": 49,
+            "color": "#808080"
+        },
+        "highConfidance": {
+            "id": 2,
+            "min": 50,
+            "max": 100,
+            "value": 89,
+            "color": "#d6c800"
+        },
+        "highestConfidance": {
+            "id": 3,
+            "min": 90,
+            "max": 100,
+            "value": 100,
+            "color": "#80c900"
+        }
+    },
+    {
+        "orgId": 3795,
+        "organisationName": "Yahoo",
+        "telephone": "987321",
+        "email": "yahoo@gmail.com",
+        "validFrom": "2022-12-03",
+        "validTo": "2023-01-26",
+        "lowConfidance": {
+            "id": 0,
+            "min": 0,
+            "max": 100,
+            "value": 25,
+            "color": "#d30000"
+        },
+        "midConfidance": {
+            "id": 1,
+            "min": 26,
+            "max": 100,
+            "value": 49,
+            "color": "#808080"
+        },
+        "highConfidance": {
+            "id": 2,
+            "min": 50,
+            "max": 100,
+            "value": 89,
+            "color": "#d6c800"
+        },
+        "highestConfidance": {
+            "id": 3,
+            "min": 90,
+            "max": 100,
+            "value": 100,
+            "color": "#80c900"
+        }
+    }
+]
